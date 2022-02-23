@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author benabc
+ * @author oninjasper
  */
 
 public class ObjectsList {
@@ -13,7 +13,7 @@ public class ObjectsList {
     
     public static void AddNewObject(String[] args)
     {
-        objectsList.add(new String[]{args[0], args[1], args[2], args[3]});
+        objectsList.add(new String[]{args[0], args[1], args[2]});
     }
     
     public static String[] getObject(String object)

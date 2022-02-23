@@ -27,10 +27,8 @@ public class AddObjectDialog extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextFieldReachNetInter = new javax.swing.JTextField();
         jTextFieldPorts = new javax.swing.JTextField();
         jTextFieldtimeout = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -42,20 +40,9 @@ public class AddObjectDialog extends javax.swing.JDialog {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Scan options"));
 
-        jLabel1.setText("IP Address Range");
-
         jLabel2.setText("Check open ports:");
 
         jLabel3.setText("Ping timeout (ms):");
-
-        jTextFieldReachNetInter.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jTextFieldReachNetInterMouseEntered(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTextFieldReachNetInterMousePressed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -65,31 +52,25 @@ public class AddObjectDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextFieldReachNetInter)
-                        .addComponent(jTextFieldPorts, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                    .addComponent(jTextFieldPorts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldtimeout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextFieldReachNetInter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextFieldtimeout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jTextFieldtimeout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextFieldPorts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter IP address"));
@@ -116,7 +97,7 @@ public class AddObjectDialog extends javax.swing.JDialog {
                 .addComponent(jTextFieldObject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jBtnOk.setText("Add");
+        jBtnOk.setText("Scan IP Address");
         jBtnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnOkActionPerformed(evt);
@@ -135,7 +116,7 @@ public class AddObjectDialog extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBtnOk)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -145,7 +126,7 @@ public class AddObjectDialog extends javax.swing.JDialog {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jBtnOk)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -162,7 +143,6 @@ public class AddObjectDialog extends javax.swing.JDialog {
                     jTextFieldObject.getText());
             ScanObjects.ObjectsList.AddNewObject(new String[] {
                     jTextFieldObject.getText(),
-                    jTextFieldReachNetInter.getText(),
                     jTextFieldtimeout.getText(),
                     jTextFieldPorts.getText()});
             this.dispose();
@@ -172,17 +152,6 @@ public class AddObjectDialog extends javax.swing.JDialog {
     private void jTextFieldObjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldObjectActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldObjectActionPerformed
-
-    private void jTextFieldReachNetInterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldReachNetInterMouseEntered
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_jTextFieldReachNetInterMouseEntered
-
-    private void jTextFieldReachNetInterMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldReachNetInterMousePressed
-        // TODO add your handling code here:
-  
-    }//GEN-LAST:event_jTextFieldReachNetInterMousePressed
     
     /**
      * @param args the command line arguments
@@ -217,13 +186,7 @@ public class AddObjectDialog extends javax.swing.JDialog {
         }  
          
         // IP Validation check 
-        if (!IPAddress.validIPAddress(jTextFieldReachNetInter.getText())) 
-        {
-            JOptionPane.showMessageDialog(null, "Invalid IP Range (192.***.***.***)");
-            jTextFieldReachNetInter.selectAll();
-            jTextFieldReachNetInter.setFocusable(true);            
-            return false;
-        }           
+                
         
          // valid time out
         int timeout = Utilities.StrToInt(jTextFieldtimeout.getText());
@@ -247,14 +210,12 @@ public class AddObjectDialog extends javax.swing.JDialog {
     }    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnOk;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextFieldObject;
     private javax.swing.JTextField jTextFieldPorts;
-    private javax.swing.JTextField jTextFieldReachNetInter;
     private javax.swing.JTextField jTextFieldtimeout;
     // End of variables declaration//GEN-END:variables
     

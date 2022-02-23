@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+import MainPackage.AddObjectDialog;
 
 
 
@@ -91,6 +92,8 @@ public class IPAddress {
             int hostpart = getHostAdrPart(object);
             if (hostpart == 1) 
                 FirstInt = 0;
+            else if (hostpart == 254) 
+                FirstInt = 1;
             else 
                 FirstInt = hostpart;     
         }        
@@ -109,9 +112,29 @@ public class IPAddress {
             int hostpart = getHostAdrPart(object);
             if (hostpart == 1)
                 LastInt = 254;
+            else if (hostpart == 254)
+                LastInt = 254;
+            
             else
                 LastInt = hostpart;     
         }        
         return LastInt;        
     }  
+    public static int getOtherLastAdrHost(String object){
+        if (object == null) return -1;
+        int LastInt = 0;
+      
+        int sprpos = object.indexOf("-");
+        if (sprpos != -1)
+            LastInt = getHostAdrPart(getNetAdrPart(object) + object.substring(sprpos + 1));               
+        else {
+            int hostpart = getHostAdrPart(object);
+            if (hostpart == 1)
+                LastInt = 10;
+            
+            else
+                LastInt = hostpart;     
+        }        
+        return LastInt;        
+    }
 }

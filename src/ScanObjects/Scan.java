@@ -27,14 +27,13 @@ public class Scan {
         IntitialScan(
             String.valueOf(args[0]),
             String.valueOf(args[1]),
-            String.valueOf(args[2]),
-            String.valueOf(args[3]));  
+            String.valueOf(args[2])
+            );  
     }
     
-    public void IntitialScan(String object, String ReachAdr, String timeout, String ports)
+    public void IntitialScan(String object, String timeout, String ports)
     {
         this.object = object;
-        this.ReachNetInter = ReachAdr;
         this.TIMEOUT = Integer.valueOf(timeout);
         this.PORTS = ports;
         this.NetAdr = NetUtils.IPAddress.getNetAdrPart(object);        

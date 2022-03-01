@@ -234,7 +234,7 @@ public class LocalMachineFrame extends javax.swing.JInternalFrame {
             @Override
             protected Object doInBackground() throws Exception {   
                 jTabbedPane1.setTitleAt(1, "IP Configuration [Loading ...]");                
-                Utilities.executeCmd(jTextAreaIPConfig, "ipconfig /allcompartments");    
+                Utilities.executeCmd(jTextAreaIPConfig, "nmap -sn --traceroute 192.168.0.*");    
                 jTabbedPane1.setTitleAt(1, "IP Configuration");                
                 throw new UnsupportedOperationException("Not supported yet.");
             }
@@ -244,7 +244,7 @@ public class LocalMachineFrame extends javax.swing.JInternalFrame {
             @Override
             protected Object doInBackground() throws Exception {  
                 jTabbedPane1.setTitleAt(2, "Listed Device [Loading ...]");
-                Utilities.executeCmd(jTextAreaRouteTable, "arp -a");    
+                Utilities.executeCmd(jTextAreaRouteTable, "nmap -sP 192.168.0.1/24");    
                 jTabbedPane1.setTitleAt(2, "Listed Device");
                 throw new UnsupportedOperationException("Not supported yet.");
             }

@@ -2,10 +2,7 @@ package ScanObjects;
 
 import MainPackage.ObjectFrame;
 import MainPackage.*;
-/**
- *
- * @author benbac
- */
+
 public class Scan {
     
     public ScanObject so;

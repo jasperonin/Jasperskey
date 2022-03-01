@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import NetUtils.IPAddress;
+import java.awt.Toolkit;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -29,6 +30,10 @@ public class assessmentJFrame extends javax.swing.JFrame {
      */
     public assessmentJFrame() {
         initComponents();
+        SetIcon();
+    }
+    public void SetIcon(){
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Ampeross-Qetto-2-Security.png")));
     }
     
   public boolean isValidIP(){

@@ -1,6 +1,7 @@
 package MainPackage;
 
 import java.awt.Desktop;
+import java.awt.Toolkit;
 import java.net.URI;
 
 /**
@@ -13,8 +14,11 @@ public class AboutJFrame extends javax.swing.JFrame {
     /** Creates new form AboutJFrame */
     public AboutJFrame() {
         initComponents();
+        SetIcon();
     }
-    
+      public void SetIcon(){
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Ampeross-Qetto-2-Security.png")));
+    }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is

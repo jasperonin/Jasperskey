@@ -47,6 +47,8 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         objectModel = new DefaultListModel();  
         jListObjects.setModel(objectModel); 
+        SetIcon();
+       
     }
 
     /** This method is called from within the constructor to
@@ -109,6 +111,7 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("JaspersKey");
         setBounds(new java.awt.Rectangle(100, 100, 0, 0));
+        setLocationByPlatform(true);
         setResizable(false);
 
         jSplitPane.setDividerLocation(150);
@@ -152,7 +155,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jSplitPane.setRightComponent(jScrollPaneRight);
 
-        jFileMenu.setText("File");
+        jFileMenu.setText("Action");
         jFileMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jFileMenuMouseClicked(evt);
@@ -480,6 +483,9 @@ public class MainFrame extends javax.swing.JFrame {
         list.requestFocus();
     }
     
+    public void SetIcon(){
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Ampeross-Qetto-2-Security.png")));
+    }
     public void ShowObjectsPopupMenu(int x, int y)
     {
         // Get mouse posiiton

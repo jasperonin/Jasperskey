@@ -5,6 +5,8 @@
  */
 package MainPackage;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author JasperOnin
@@ -16,8 +18,11 @@ public class helpJFrame extends javax.swing.JFrame {
      */
     public helpJFrame() {
         initComponents();
+        SetIcon();
     }
-
+  public void SetIcon(){
+    setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Ampeross-Qetto-2-Security.png")));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
